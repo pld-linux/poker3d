@@ -53,7 +53,9 @@ thirteen tables can be found (Hold'em, Omaha, Omaha8, 7 Stud, Sit and
 Go tournaments) with more than fifty players.
 
 %description -l pl
-pl desc
+Poker3D jest wieloosobow± gr± sieciow± w pokera. £±czy siê z serwerem
+gdzie mo¿na znale¼æ do trzynastu sto³ów (turnieje Hold'em, Omaha, Omaha8, 7
+Stud, Sit and Go) z ponad piêcdziesiêcioma graczami.
 
 %package common
 Summary:	Common files for game and server
@@ -62,8 +64,10 @@ Group:		Applications/Games
 Requires:	underware = %{version}-%{release}
 
 %description common
+Poker3D - common files.
 
 %description common -l pl
+Poker3D - pliki wspó³dzielone.
 
 %package server
 Summary:	Poker3D server
@@ -72,8 +76,10 @@ Group:		Applications/Games
 Requires:	poker3d-common = %{version}-%{release}
 
 %description server
+This is Poker3D server.
 
 %description server -l pl
+To jest serwer gry Poker3D.
 
 %package -n underware
 Summary:	underware - 3D game programming libraries

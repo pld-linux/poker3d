@@ -51,8 +51,8 @@ Go tournaments) with more than fifty players.
 
 %description -l pl
 Poker3D jest wieloosobow± gr± sieciow± w pokera. £±czy siê z serwerem
-gdzie mo¿na znale¼æ do trzynastu sto³ów (turnieje Hold'em, Omaha, Omaha8, 7
-Stud, Sit and Go) z ponad piêcdziesiêcioma graczami.
+gdzie mo¿na znale¼æ do trzynastu sto³ów (turnieje Hold'em, Omaha,
+Omaha8, 7 Stud, Sit and Go) z ponad piêcdziesiêcioma graczami.
 
 %package common
 Summary:	Common files for game and server
@@ -71,7 +71,7 @@ Poker3D - pliki wspó³dzielone.
 
 %package server
 Summary:	Poker3D server
-Summary(pl):	Serwer pokera 3D
+Summary(pl):	Serwer trójwymiarowego pokera
 Group:		Applications/Games
 Requires:	poker3d-common = %{version}-%{release}
 Requires:	python-MySQLdb
@@ -84,7 +84,7 @@ To jest serwer gry Poker3D.
 
 %package -n underware
 Summary:	underware - 3D game programming libraries
-Summary(pl):	underware - biblioteki programistyczne gier 3D
+Summary(pl):	underware - biblioteki programistyczne gier trójwymiarowych
 Group:		Libraries
 
 %description -n underware
@@ -93,7 +93,7 @@ Group:		Libraries
 
 %package -n underware-devel
 Summary:	underware header files
-Summary(pl):	pliki nag³ówkowe underware
+Summary(pl):	Pliki nag³ówkowe underware
 Group:		Libraries/Developement
 Requires:	underware = %{version}-%{release}
 Requires:	OpenSceneGraph-devel
@@ -103,9 +103,10 @@ Requires:	osgAL-devel
 Requires:	osgcal-devel
 
 %description -n underware-devel
+This package contains underware header files.
 
 %description -n underware-devel -l pl
-
+Ten pakiet zawiera pliki nag³ówkowe underware.
 
 %prep
 %setup -q

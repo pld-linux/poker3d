@@ -1,0 +1,44 @@
+diff -Nur poker3d-0.2.12.orig/include/osgchips/Stacks poker3d-0.2.12.new/include/osgchips/Stacks
+--- poker3d-0.2.12.orig/include/osgchips/Stacks	2004-12-16 11:23:37.000000000 +0100
++++ poker3d-0.2.12.new/include/osgchips/Stacks	2005-03-03 21:28:20.791848784 +0100
+@@ -304,11 +304,11 @@
+     virtual bool supports(osg::Drawable::ConstAttributeFunctor&) const { return true; }
+     virtual void accept(osg::Drawable::ConstAttributeFunctor& af) const {}
+ 
+-    virtual bool supports(PrimitiveIndexFunctor&) const { return false; }
+-    virtual void accept(PrimitiveIndexFunctor&) const {}
++    virtual bool supports(osg::PrimitiveIndexFunctor&) const { return false; }
++    virtual void accept(osg::PrimitiveIndexFunctor&) const {}
+ 
+-    virtual bool supports(osg::Drawable::PrimitiveFunctor&) const { return false; }
+-    virtual void accept(osg::Drawable::PrimitiveFunctor& pf) const {}
++    virtual bool supports(osg::PrimitiveFunctor&) const { return false; }
++    virtual void accept(osg::PrimitiveFunctor& pf) const {}
+ 
+   private:
+     void setMesh(ChipBank* chipBank); 
+diff -Nur poker3d-0.2.12.orig/src/ugame/Stacks.cpp poker3d-0.2.12.new/src/ugame/Stacks.cpp
+--- poker3d-0.2.12.orig/src/ugame/Stacks.cpp	2004-12-16 13:09:59.000000000 +0100
++++ poker3d-0.2.12.new/src/ugame/Stacks.cpp	2005-03-03 21:27:12.435240568 +0100
+@@ -490,16 +490,16 @@
+   virtual bool supports(osg::Drawable::ConstAttributeFunctor&) const { return true; }
+   virtual void accept(osg::Drawable::ConstAttributeFunctor& af) const {}
+ 
+-  virtual bool supports(PrimitiveIndexFunctor&) const { return false; }
+-  virtual void accept(PrimitiveIndexFunctor&) const {}
++  virtual bool supports(osg::PrimitiveIndexFunctor&) const { return false; }
++  virtual void accept(osg::PrimitiveIndexFunctor&) const {}
+ 
+-  virtual bool supports(osg::Drawable::PrimitiveFunctor&) const { return true; }
+-  virtual void accept(osg::Drawable::PrimitiveFunctor& functor) const;
++  virtual bool supports(osg::PrimitiveFunctor&) const { return true; }
++  virtual void accept(osg::PrimitiveFunctor& functor) const;
+ 
+   osg::ref_ptr<osg::Vec3Array> _box;
+ };
+ 
+-void Box::accept(osg::Drawable::PrimitiveFunctor& functor) const {
++void Box::accept(osg::PrimitiveFunctor& functor) const {
+   for(osg::Drawable::ParentList::const_iterator i = _parents.begin(); i != _parents.end(); i++) {
+     (*i)->getBound();
+   }

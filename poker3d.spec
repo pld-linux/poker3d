@@ -38,7 +38,7 @@ BuildRequires:	osgAL-devel
 BuildRequires:	osgcal-devel >= 0.1.23
 BuildRequires:	poker-eval-devel >= 123.0
 BuildRequires:	python-devel >= 2.3
-Requires:	poker3d-common = %{version}-%{release}
+Requires:	%{name}-common = %{version}-%{release}
 Requires:	Xwnc
 Requires:	python-pycurl
 %pyrequires_eq	python-libs
@@ -52,7 +52,7 @@ Go tournaments) with more than fifty players.
 %description -l pl
 Poker3D jest wieloosobow± gr± sieciow± w pokera. £±czy siê z serwerem
 gdzie mo¿na znale¼æ do trzynastu sto³ów (turnieje Hold'em, Omaha,
-Omaha8, 7 Stud, Sit and Go) z ponad piêcdziesiêcioma graczami.
+Omaha8, 7 Stud, Sit and Go) z ponad piêædziesiêcioma graczami.
 
 %package common
 Summary:	Common files for game and server
@@ -88,8 +88,10 @@ Summary(pl):	underware - biblioteki programistyczne gier trójwymiarowych
 Group:		Libraries
 
 %description -n underware
+underware - 3D game programming libraries.
 
 %description -n underware -l pl
+underware - biblioteki programistyczne gier trójwymiarowych.
 
 %package -n underware-devel
 Summary:	underware header files
@@ -116,7 +118,7 @@ Ten pakiet zawiera pliki nag³ówkowe underware.
 %build
 %{__autopoint}
 %{__libtoolize}
-%{__aclocal} -I ./config
+%{__aclocal} -I config
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -131,6 +133,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name "*.py" -and -not -name "jabberaccount.py" \
 	-exec rm "{}" ";"
+
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/underware/*.la
+
 # empty
 # %find_lang underware
 touch underware.lang
@@ -148,8 +153,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/poker3d
 %attr(755,root,root) %{_bindir}/poker3d-interface
-%{_mandir}/man6/poker3d.6.*
-%{_mandir}/man6/poker3d-interface.6.*
+%{_mandir}/man6/poker3d.6*
+%{_mandir}/man6/poker3d-interface.6*
 %{_datadir}/underware/poker/data
 %{_datadir}/underware/interface.glade*
 %{_sysconfdir}/poker3d/client
@@ -168,7 +173,7 @@ rm -rf $RPM_BUILD_ROOT
 %files server
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/poker3d-server
-%{_mandir}/man6/poker3d-server.6.*
+%{_mandir}/man6/poker3d-server.6*
 %{_sysconfdir}/poker3d/tournament
 %{_sysconfdir}/poker3d/server
 %{_sysconfdir}/poker3d/bot
@@ -180,7 +185,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/underware
 %dir %{_datadir}/underware
 %attr(755,root,root) %{_libdir}/lib[emu]*.so.*.*.*
-%{_mandir}/man6/underware.6.*
+%{_mandir}/man6/underware.6*
 %dir %{py_sitedir}/underware
 %{py_sitedir}/underware/*.py[co]
 %attr(755,root,root) %{py_sitedir}/underware/*.so*
@@ -192,7 +197,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib[emu]*.so
 %{_libdir}/lib[emu]*.la
 %{_pkgconfigdir}/underware.pc
-%attr(755,root,root) %{py_sitedir}/underware/*.so
-%{py_sitedir}/underware/*.la
 %attr(755,root,root) %{_libdir}/osgPlugins/libosgdb_hdr.so
+# XXX: check if needed
 %{_libdir}/osgPlugins/libosgdb_hdr.la

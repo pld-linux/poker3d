@@ -182,7 +182,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man6/underware.6.*
 %dir %{py_sitedir}/underware
 %{py_sitedir}/underware/*.py[co]
-%attr(755,root,root) %{py_sitedir}/underware/*.so.*.*.*
+%attr(755,root,root) %{py_sitedir}/underware/*.so*
 %attr(755,root,root) %{_libdir}/osgPlugins/libosgdb_hdr.so.*.*.*
 
 %files -n underware-devel

@@ -40,9 +40,6 @@ BuildRequires:	poker-eval-devel >= 123.0
 BuildRequires:	python-devel >= 2.3
 Requires:	poker3d-common = %{version}-%{release}
 Requires:	Xwnc
-Requires:	pypoker-eval
-Requires:	python-Twisted
-Requires:	python-libxml2
 Requires:	python-pycurl
 %pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -62,6 +59,9 @@ Summary:	Common files for game and server
 Summary(pl):	Wspólne pliki serwera i gry
 Group:		Applications/Games
 Requires:	underware = %{version}-%{release}
+Requires:	pypoker-eval
+Requires:	python-Twisted
+Requires:	python-libxml2
 
 %description common
 Poker3D - common files.
@@ -74,6 +74,7 @@ Summary:	Poker3D server
 Summary(pl):	Serwer pokera 3D
 Group:		Applications/Games
 Requires:	poker3d-common = %{version}-%{release}
+Requires:	python-MySQLdb
 
 %description server
 This is Poker3D server.
@@ -136,8 +137,8 @@ touch underware.lang
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	common	-p /sbin/ldconfig
+%postun	common	-p /sbin/ldconfig
 
 %post	-n underware	-p /sbin/ldconfig
 %postun	-n underware	-p /sbin/ldconfig

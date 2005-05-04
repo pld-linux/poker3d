@@ -29,6 +29,7 @@ BuildRequires:	automake
 BuildRequires:	cal3d-devel
 BuildRequires:	doxygen
 BuildRequires:	fontconfig-devel
+BuildRequires:	gettext-autopoint
 BuildRequires:	libglade2-devel >= 2.4.0
 BuildRequires:	libvorbis-devel
 BuildRequires:	libstdc++-devel

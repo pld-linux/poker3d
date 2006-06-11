@@ -97,7 +97,7 @@ underware - biblioteki programistyczne gier trójwymiarowych.
 %package -n underware-devel
 Summary:	underware header files
 Summary(pl):	Pliki nag³ówkowe underware
-Group:		Libraries/Developement
+Group:		Development/Libraries
 Requires:	underware = %{version}-%{release}
 Requires:	OpenSceneGraph-devel
 Requires:	cal3d-devel

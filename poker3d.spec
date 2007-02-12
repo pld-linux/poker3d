@@ -10,7 +10,7 @@
 #   poker, but it links to libpoker-eval
 
 Summary:	Multiuser 3D online poker game
-Summary(pl):	Sieciowa gra w pokera w 3D
+Summary(pl.UTF-8):   Sieciowa gra w pokera w 3D
 Name:		poker3d
 Version:	0.2.12
 Release:	0.1
@@ -50,14 +50,14 @@ Poker3D is a multiuser online poker game. It connects to server where
 thirteen tables can be found (Hold'em, Omaha, Omaha8, 7 Stud, Sit and
 Go tournaments) with more than fifty players.
 
-%description -l pl
-Poker3D jest wieloosobow± gr± sieciow± w pokera. £±czy siê z serwerem
-gdzie mo¿na znale¼æ do trzynastu sto³ów (turnieje Hold'em, Omaha,
-Omaha8, 7 Stud, Sit and Go) z ponad piêædziesiêcioma graczami.
+%description -l pl.UTF-8
+Poker3D jest wieloosobowÄ… grÄ… sieciowÄ… w pokera. ÅÄ…czy siÄ™ z serwerem
+gdzie moÅ¼na znaleÅºÄ‡ do trzynastu stoÅ‚Ã³w (turnieje Hold'em, Omaha,
+Omaha8, 7 Stud, Sit and Go) z ponad piÄ™Ä‡dziesiÄ™cioma graczami.
 
 %package common
 Summary:	Common files for game and server
-Summary(pl):	Wspólne pliki serwera i gry
+Summary(pl.UTF-8):   WspÃ³lne pliki serwera i gry
 Group:		Applications/Games
 Requires:	underware = %{version}-%{release}
 Requires:	pypoker-eval
@@ -67,12 +67,12 @@ Requires:	python-libxml2
 %description common
 Poker3D - common files.
 
-%description common -l pl
-Poker3D - pliki wspó³dzielone.
+%description common -l pl.UTF-8
+Poker3D - pliki wspÃ³Å‚dzielone.
 
 %package server
 Summary:	Poker3D server
-Summary(pl):	Serwer trójwymiarowego pokera
+Summary(pl.UTF-8):   Serwer trÃ³jwymiarowego pokera
 Group:		Applications/Games
 Requires:	poker3d-common = %{version}-%{release}
 Requires:	python-MySQLdb
@@ -80,23 +80,23 @@ Requires:	python-MySQLdb
 %description server
 This is Poker3D server.
 
-%description server -l pl
+%description server -l pl.UTF-8
 To jest serwer gry Poker3D.
 
 %package -n underware
 Summary:	underware - 3D game programming libraries
-Summary(pl):	underware - biblioteki programistyczne gier trójwymiarowych
+Summary(pl.UTF-8):   underware - biblioteki programistyczne gier trÃ³jwymiarowych
 Group:		Libraries
 
 %description -n underware
 underware - 3D game programming libraries.
 
-%description -n underware -l pl
-underware - biblioteki programistyczne gier trójwymiarowych.
+%description -n underware -l pl.UTF-8
+underware - biblioteki programistyczne gier trÃ³jwymiarowych.
 
 %package -n underware-devel
 Summary:	underware header files
-Summary(pl):	Pliki nag³ówkowe underware
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe underware
 Group:		Development/Libraries
 Requires:	underware = %{version}-%{release}
 Requires:	OpenSceneGraph-devel
@@ -108,8 +108,8 @@ Requires:	osgcal-devel
 %description -n underware-devel
 This package contains underware header files.
 
-%description -n underware-devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe underware.
+%description -n underware-devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe underware.
 
 %prep
 %setup -q

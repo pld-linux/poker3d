@@ -10,7 +10,7 @@
 #   poker, but it links to libpoker-eval
 
 Summary:	Multiuser 3D online poker game
-Summary(pl.UTF-8):   Sieciowa gra w pokera w 3D
+Summary(pl.UTF-8):	Sieciowa gra w pokera w 3D
 Name:		poker3d
 Version:	0.2.12
 Release:	0.1
@@ -57,7 +57,7 @@ Omaha8, 7 Stud, Sit and Go) z ponad pięćdziesięcioma graczami.
 
 %package common
 Summary:	Common files for game and server
-Summary(pl.UTF-8):   Wspólne pliki serwera i gry
+Summary(pl.UTF-8):	Wspólne pliki serwera i gry
 Group:		Applications/Games
 Requires:	underware = %{version}-%{release}
 Requires:	pypoker-eval
@@ -72,7 +72,7 @@ Poker3D - pliki współdzielone.
 
 %package server
 Summary:	Poker3D server
-Summary(pl.UTF-8):   Serwer trójwymiarowego pokera
+Summary(pl.UTF-8):	Serwer trójwymiarowego pokera
 Group:		Applications/Games
 Requires:	poker3d-common = %{version}-%{release}
 Requires:	python-MySQLdb
@@ -85,7 +85,7 @@ To jest serwer gry Poker3D.
 
 %package -n underware
 Summary:	underware - 3D game programming libraries
-Summary(pl.UTF-8):   underware - biblioteki programistyczne gier trójwymiarowych
+Summary(pl.UTF-8):	underware - biblioteki programistyczne gier trójwymiarowych
 Group:		Libraries
 
 %description -n underware
@@ -96,7 +96,7 @@ underware - biblioteki programistyczne gier trójwymiarowych.
 
 %package -n underware-devel
 Summary:	underware header files
-Summary(pl.UTF-8):   Pliki nagłówkowe underware
+Summary(pl.UTF-8):	Pliki nagłówkowe underware
 Group:		Development/Libraries
 Requires:	underware = %{version}-%{release}
 Requires:	OpenSceneGraph-devel
